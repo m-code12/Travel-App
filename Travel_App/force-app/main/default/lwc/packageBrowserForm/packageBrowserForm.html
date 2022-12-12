@@ -1,0 +1,66 @@
+<template>
+    
+    <lightning-card>    
+        <!--search box-->
+    
+    <div class="slds-m-around_small">
+      
+        <div class="slds-m-bottom_small">
+            <lightning-input type="search"
+               value={searchValue}
+               placeholder="Where you are going?"
+               icon-name="utility:search"
+               label="Destination/Property Name"
+               onchange={searchKeyword}
+               >
+               <lightning-icon icon-name="utility:search"></lightning-icon>
+
+            </lightning-input>
+
+         </div>
+         
+         <lightning-button label="Search"
+            onclick={handleSearchKeyword}
+            variant="brand"></lightning-button>
+            
+      </div>
+
+          <!--date picker-->
+
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-m-left_small">
+                    <lightning-input type="date" name="startdate" class="startdate" label="Start Date" value={start_date} onchange={handleDateChange} required ></lightning-input>
+                </div>
+                <div class="slds-col slds-m-right_large">
+                    <lightning-input type="date" name="enddate" class="enddate" label="End Date"  value={end_date} onchange={handleDateChange} required></lightning-input>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-m-left_large">
+                    <div class="slds-text-color_error slds-p-top_medium">No Of Days Selected : {range}</div>
+                </div>
+            </div>
+
+        <!--checkbox-->
+
+        <div class="slds-col slds-m-left_medium slds-m-bottom_small">
+
+            <lightning-checkbox-group name="Checkbox Group"
+        
+            label="Checkbox Group"
+            options={options}
+            value={value}
+            onchange={handleChange}>
+
+        </lightning-checkbox-group>
+
+
+
+        </div>
+
+    <!--<p>Selected Values are: {selectedValues}</p>-->
+
+</lightning-card>
+
+
+</template>
